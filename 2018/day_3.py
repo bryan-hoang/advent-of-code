@@ -1,13 +1,13 @@
 import re
 
-raw_claims = [line for line in open('input')]
+raw_claims = [line for line in open('./day_3_input.txt')]
 
 # parse
 
 parsed_claims = []
 
 for raw_claim in raw_claims:
-    parsed_claims.append(map(int, re.findall('#([0-9]+) @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)', raw_claim)[0]))
+    parsed_claims.append([*map(int, re.findall('#([0-9]+) @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)', raw_claim)[0])])
     # alternate method: x = ''.join(c if c.isnumeric() else ' ' for c in claim).split(' ')
 
 claimed_points = set()

@@ -1,5 +1,5 @@
 def main():
-    box_ids = [line for line in open('./input.txt')]
+    box_ids = [line for line in open('./day_2_input.txt')]
 
     # Part 1:
     two_letter_id_count = 0

@@ -3,7 +3,7 @@ from collections import defaultdict
 
 
 def process_raw_input():
-    raw_input = open('input').readlines()
+    raw_input = open('day_4_input.txt').readlines()
     guard_schedule = []
     for line in raw_input:
         date_time_info = [*map(int, re.findall(
@@ -23,7 +23,7 @@ def process_raw_input():
 
 
 def get_sleepiest_guard(guard_schedule):
-    guards_data = defaultdict(lambda: {'sleep time': 0, 'start time': 0, 'unique minutes asleep': [0]*60})
+    guards_data = defaultdict(lambda: {'sleep time': 0, 'start time': 0, 'unique minutes asleep': [0] * 60})
     guard_on_duty = 0
     for entry in guard_schedule:
         if 'Guard' in entry['event']:
@@ -46,4 +46,4 @@ if __name__ == "__main__":
     # for s in guard_schedule:
     #     print(s)
     sleepiest_guard, fav_minute = get_sleepiest_guard(guard_schedule)
-    print(sleepiest_guard,  fav_minute, sleepiest_guard * fav_minute)
+    print(sleepiest_guard, fav_minute, sleepiest_guard * fav_minute)

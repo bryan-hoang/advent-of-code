@@ -5,7 +5,7 @@ seen_frequencies = set()
 current_position = 0
 
 # Note: This is a generator - Alex
-file = list(int(line) for line in open('input'))
+file = list(int(line) for line in open('./day_1_input.txt'))
 
 while True:
     frequency += file[current_position]
