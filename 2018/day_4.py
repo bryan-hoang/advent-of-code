@@ -34,16 +34,20 @@ def get_sleepiest_guard(guard_schedule):
             guards_data[str(guard_on_duty)]['sleep time'] += entry['minute'] - guards_data[str(guard_on_duty)]['start time']
             for minute in range(guards_data[str(guard_on_duty)]['start time'], entry['minute']):
                 guards_data[str(guard_on_duty)]['unique minutes asleep'][minute] += 1
-    chosen_guard = max(guards_data.items(), key=lambda e: e[1]['sleep time'])
+    chosen_guard_1 = max(guards_data.items(), key=lambda e: e[1]['sleep time'])
+    chosen_guard_2 = max(guards_data.items(), key=lambda e: max(e[1]['unique minutes asleep']))
+
     # print('\n'.join(map(str, guards_data.items())))
     # print(chosen_guard)
-    fav_minute = chosen_guard[1]['unique minutes asleep'].index(max(chosen_guard[1]['unique minutes asleep']))
-    return int(chosen_guard[0]), fav_minute
+    fav_minute_1 = chosen_guard_1[1]['unique minutes asleep'].index(max(chosen_guard_1[1]['unique minutes asleep']))
+    fav_minute_2 = chosen_guard_2[1]['unique minutes asleep'].index(max(chosen_guard_2[1]['unique minutes asleep']))
+
+    return int(chosen_guard_1[0]), fav_minute_1, int(chosen_guard_2[0]), fav_minute_2
 
 
 if __name__ == "__main__":
     guard_schedule = process_raw_input()
     # for s in guard_schedule:
     #     print(s)
-    sleepiest_guard, fav_minute = get_sleepiest_guard(guard_schedule)
-    print(sleepiest_guard, fav_minute, sleepiest_guard * fav_minute)
+    sleepiest_guard, fav_minute, chosen_guard_2, fav_minute_2 = get_sleepiest_guard(guard_schedule)
+    print(sleepiest_guard, fav_minute, sleepiest_guard * fav_minute, chosen_guard_2 * fav_minute_2)
