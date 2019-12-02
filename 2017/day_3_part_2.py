@@ -13,7 +13,7 @@ class Point:
 
     def move(self):
         self.position += self.direction
-        self.values_written[self.position] = self.__compute_value_currently_written___()
+        self.values_written[self.position] = self.compute_value_currently_written()
         self.steps_taken += 1
         self.consecutive_steps_taken += 1
         if self.consecutive_steps_taken == self.steps_without_turning:
@@ -21,8 +21,7 @@ class Point:
             self.consecutive_steps_taken = 0
             self.steps_without_turning += 1 if self.direction == -1 or self.direction == 1 else 0
 
-    def __compute_value_currently_written___(self) -> int:
-        # Neighbour behind
+    def compute_value_currently_written(self) -> int:
         return self.values_written[self.position - self.direction] \
                + self.values_written[self.position + self.direction * 1j] \
                + self.values_written[self.position + self.direction * 1j - self.direction] \
