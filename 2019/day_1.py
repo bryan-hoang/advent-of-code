@@ -1,7 +1,8 @@
-module_masses = [int(line) for line in open('day_1_input.txt')]
+import util
 
 
-if __name__ == "__main__":
+def main():
+    module_masses = util.read_file('day_1_input.txt', 'ints')
     # Part 1
     print(sum(((mass // 3 - 2) for mass in module_masses)))
 
@@ -15,3 +16,7 @@ if __name__ == "__main__":
             fuel = fuel // 3 - 2
 
     print(total_fuel)
+
+
+if __name__ == "__main__":
+    main()

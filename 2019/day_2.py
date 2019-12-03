@@ -1,5 +1,8 @@
+import util
+
+
 def main():
-    intcode_program = [int(num) for num in open("./day_2_input.txt").read().split(',')]
+    intcode_program = util.read_file('day_2_input.txt', 'ints')
 
     program_output = 0
     for i in range(100):
