@@ -10,7 +10,7 @@ def main():
             memory = intcode_program.copy()
             memory[1] = i
             memory[2] = j
-            program_output = rum_program(memory)
+            program_output = run_program(memory)
             if program_output == 19690720:
                 noun = i
                 verb = j
@@ -21,7 +21,7 @@ def main():
         break
 
 
-def rum_program(memory: list) -> int:
+def run_program(memory: list) -> int:
     current_position = 0
     while True:
         current_opcode = memory[current_position]
