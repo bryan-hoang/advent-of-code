@@ -8,7 +8,7 @@ def manhattan_distance(point_1: tuple, point_2: tuple) -> int:
 def read_file(file_name, read_mode: str = 'str'):
     with open(file_name) as file:
         if read_mode == 'str':
-            return [line for line in file]
+            return [line.strip() for line in file]
         elif read_mode == 'int':
             return [int(line) for line in file]
         elif read_mode == 'ints':
