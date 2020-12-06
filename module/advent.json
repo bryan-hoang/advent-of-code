@@ -1,0 +1,5 @@
+{
+  "year": "2015",
+  "nameTemplate": "day{{num}}.js",
+  "templateFile": "module/templates/day.js"
+}
