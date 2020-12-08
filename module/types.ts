@@ -1,20 +1,17 @@
-export interface Config {
-  year: number;
-  day: number;
-  session: string;
-  dayFilepath: string;
-  nameTemplate: string;
-  templateFile: string;
-  part?: number;
+export interface AdventOfCodeConfig {
+  year?: number;
+  templateFile?: string;
+  nameTemplate?: string;
+  inputFile?: string;
 }
 
-
-export type InitConfig = {
-  dayFilePath: string;
-  templateFile: string;
+export interface InitOptions extends AdventOfCodeConfig {
   force?: boolean;
-};
+}
 
+export interface RunConfig extends AdventOfCodeConfig {
+  part: number;
+}
 
 export enum Month {
   DECEMBER = 11,

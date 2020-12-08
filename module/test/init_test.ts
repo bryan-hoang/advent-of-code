@@ -1,14 +1,30 @@
-import { assert } from "../test_deps.ts";
-import { debug } from "../util.ts";
-import init from "../init.ts";
-import { path } from "../deps.ts";
+import { Defaults } from "../lib/constants.ts";
+import init from "../lib/init.ts";
 
 Deno.test({
   name: "init",
-  fn: () => {
-    const success = init(
-      { dayFilePath: "test/tmp/day_1.ts", templateFile: "template/day.ts" },
-    );
-    assert(success);
+  fn: async () => {
+    const day = 1;
+    const commonInitConfig = {
+      templateFile: "template/day.ts",
+      inputFile: "test/tmp/input.txt",
+      nameTemplate: "test/tmp/day_${num}.ts",
+    };
+
+    await init(day, {
+      ...commonInitConfig,
+      force: true,
+    });
+
+    await init(day, {
+      ...commonInitConfig,
+      force: false,
+    });
+
+    await init(day, {
+      ...commonInitConfig,
+      force: true,
+      templateFile: Defaults.templateFile,
+    });
   },
 });
