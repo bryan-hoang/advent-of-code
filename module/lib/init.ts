@@ -1,7 +1,7 @@
 import { ensureFileSync, existsSync } from "../deps.ts";
 import { debug, getDayPath, isURL } from "../util.ts";
 import type { InitOptions } from "../types.ts";
-import { getInput } from "./tools/aoc_api.ts";
+import fetchInput from "./tools/fetch_input.ts";
 import getConfig from "./tools/get_config.ts";
 
 const ensureDayFileExists = async (
@@ -65,7 +65,7 @@ const ensureInputFileExists = async (
   console.log(
     `Fetching input file from https://adventofcode.com/${year}/day/${day}/input`,
   );
-  const input = await getInput({ year, day });
+  const input = await fetchInput({ year, day });
   const encoder = new TextEncoder();
   ensureFileSync(inputFile);
   const inputFileData = encoder.encode(input);

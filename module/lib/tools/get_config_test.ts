@@ -1,6 +1,6 @@
-import { assert } from "../../../dev_deps.ts";
-import { debug } from "../../../util.ts";
-import getConfig from "../../../lib/tools/get_config.ts";
+import { assert } from "../../dev_deps.ts";
+import { debug } from "../../util.ts";
+import getConfig from "./get_config.ts";
 
 Deno.test({
   name: "getConfig",

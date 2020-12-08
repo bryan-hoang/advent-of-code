@@ -1,4 +1,4 @@
-import { getInput } from "./tools/aoc_api.ts";
+import fetchInput from "./tools/fetch_input.ts";
 import { debug } from "../util.ts";
 import type { AdventOfCodeConfig } from "../types.ts";
 

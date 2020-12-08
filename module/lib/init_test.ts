@@ -7,8 +7,8 @@ Deno.test({
     const day = 1;
     const commonInitConfig = {
       templateFile: "template/day.ts",
-      inputFile: "test/tmp/input.txt",
-      nameTemplate: "test/tmp/day_${num}.ts",
+      inputFile: "tmp/input.txt",
+      nameTemplate: "tmp/day_${num}.ts",
     };
 
     await init(day, {
