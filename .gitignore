@@ -4,3 +4,6 @@
 test_input.txt
 input
 .env
+tmp
+advent_of_code.json
+input*
