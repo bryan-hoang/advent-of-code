@@ -1,9 +1,15 @@
-.vscode
-/.idea/
-/venv/
-test_input.txt
-input
-.env
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
 tmp
-advent_of_code.json
+./advent_of_code.json
 input*
+.env

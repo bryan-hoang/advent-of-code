@@ -1,0 +1,7 @@
+{
+  "$schema": "../schema.json",
+  "year": 2020,
+  "templateFile": "../template/day.ts",
+  "nameTemplate": "day_${num}.ts",
+  "inputFile": "input.txt"
+}
