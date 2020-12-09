@@ -9,9 +9,14 @@ export interface InitOptions extends AdventOfCodeConfig {
   force?: boolean;
 }
 
-export interface RunConfig extends AdventOfCodeConfig {
-  part: number;
+export type RunOptions = Omit<AdventOfCodeConfig, "templateFile">;
+
+export interface DayModule {
+  part1: (input: string) => string;
+  part2: (input: string) => string;
 }
+
+export type CommandOptionsArgs = [string, string];
 
 export enum Month {
   DECEMBER = 11,

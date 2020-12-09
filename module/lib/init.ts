@@ -1,5 +1,5 @@
 import { ensureFileSync, existsSync } from "../deps.ts";
-import { debug, getDayPath, isURL } from "../util.ts";
+import { debug, getDayFilePath, isURL } from "../util.ts";
 import type { InitOptions } from "../types.ts";
 import fetchInput from "./tools/fetch_input.ts";
 import getConfig from "./tools/get_config.ts";
@@ -33,6 +33,7 @@ const ensureDayFileExists = async (
     if (!response.ok) {
       throw new Error(`Unable to fetch template file from ${dayFileTemplate}`);
     }
+
     templateFileData = new Uint8Array(await response.arrayBuffer());
   } else {
     templateFileData = Deno.readFileSync(dayFileTemplate);
@@ -86,7 +87,7 @@ const init = async (
   const year = options.year || aocConfig.year;
   const inputFile = options.inputFile || aocConfig.inputFile;
   const force = options.force;
-  const dayFile = getDayPath(day, nameTemplate);
+  const dayFile = getDayFilePath(day, nameTemplate);
 
   await ensureDayFileExists({
     dayFile,

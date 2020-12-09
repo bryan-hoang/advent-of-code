@@ -25,7 +25,7 @@ const evalTemplateLiteral = (
   return evaluatedTemplate;
 };
 
-export const getDayPath = (day: number, template: string) => {
+export const getDayFilePath = (day: number, template: string) => {
   const num = String(day).padStart(2, "0");
   const dayPath = evalTemplateLiteral(template, {
     num,
