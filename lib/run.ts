@@ -3,7 +3,6 @@ import { debug, getDayFilePath } from "../util.ts";
 import type { DayModule, RunOptions } from "../types.ts";
 import getConfig from "./tools/get_config.ts";
 import { existsSync, path } from "../deps.ts";
-import { exists } from "https://deno.land/std@0.79.0/fs/exists.ts";
 
 const run = async (
   day: number,
@@ -73,7 +72,9 @@ async function getInput(
 }
 
 async function getParts(dayFile: string) {
-  if (exists(dayFile) && !dayFile.endsWith(".js") && !dayFile.endsWith(".ts")) {
+  if (
+    existsSync(dayFile) && !dayFile.endsWith(".js") && !dayFile.endsWith(".ts")
+  ) {
     throw new Error(`Cannot find module to import from ${dayFile}`);
   }
 
