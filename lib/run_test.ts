@@ -10,8 +10,8 @@ Deno.test({
     const inputFlag = undefined;
     const options: RunOptions = {
       year: 2020,
-      nameTemplate: "example/day_${num}.ts",
-      inputFile: "example/input.txt",
+      nameTemplate: "examples/day_${num}.ts",
+      inputFile: "examples/input.txt",
     };
     await run(day, part, inputFlag, options);
   },

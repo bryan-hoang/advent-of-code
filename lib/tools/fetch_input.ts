@@ -9,7 +9,7 @@ config({
  * Fetches the input from the advent of code website.
  */
 const fetchInput = async (
-  { year, day, session = Deno.env.get('AOC_SESSION') }: {
+  { year, day, session = Deno.env.get("AOC_SESSION") }: {
     year: number;
     day: number;
     session?: string;
