@@ -47,4 +47,5 @@ jobs:
         env:
           DEBUG: aoc
           AOC_SESSION: ${{ secrets.AOC_SESSION }}
+          RUST_BACKTRACE: 1
         run: deno test -A --unstable
