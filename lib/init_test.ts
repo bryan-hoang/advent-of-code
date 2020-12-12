@@ -6,7 +6,7 @@ Deno.test({
   fn: async () => {
     const day = 1;
     const commonInitConfig = {
-      templateFile: "template/day.ts",
+      templateFile: "templates/day.ts",
       inputFile: "tmp/input.txt",
       nameTemplate: "tmp/day_${num}.ts",
     };

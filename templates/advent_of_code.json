@@ -1,0 +1,7 @@
+{
+  "$schema": "https://deno.land/x/advent_of_code/schema.json",
+  "year": 2020,
+  "nameTemplate": "day_${num}.ts",
+  "templateFile": "https://deno.land/x/advent_of_code/templates/day.ts",
+  "inputFile": "input.txt"
+}

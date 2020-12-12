@@ -4,13 +4,43 @@ import type { InitOptions } from "../types.ts";
 import fetchInput from "./tools/fetch_input.ts";
 import getConfig from "./tools/get_config.ts";
 
-const ensureDayFileExists = async (
+/**
+ * Initializes the day file and input to run if the day and input don't already exist already exist.
+ * @param {InitConfig} config
+ */
+async function init(
+  day: number,
+  options: InitOptions,
+) {
+  const aocConfig = getConfig();
+  const nameTemplate = options.nameTemplate || aocConfig.nameTemplate;
+  const templateFile = options.templateFile || aocConfig.templateFile;
+  const year = options.year || aocConfig.year;
+  const inputFile = options.inputFile || aocConfig.inputFile;
+  const force = options.force;
+  const dayFile = getDayFilePath(day, nameTemplate);
+
+  await ensureDayFileExists({
+    dayFile,
+    templateFile,
+    force,
+  });
+
+  await ensureInputFileExists({
+    year,
+    day,
+    inputFile,
+    force,
+  });
+}
+
+async function ensureDayFileExists(
   { dayFile, templateFile: dayFileTemplate, force }: {
     dayFile: string;
     templateFile: string;
     force?: boolean;
   },
-) => {
+) {
   debug(`Checking for existing file: ${dayFile}`);
   const doesDayFileExist = existsSync(dayFile);
   if (doesDayFileExist) {
@@ -41,16 +71,14 @@ const ensureDayFileExists = async (
 
   ensureFileSync(dayFile);
   Deno.writeFileSync(dayFile, templateFileData);
-};
+}
 
-const ensureInputFileExists = async (
-  { inputFile, year, day, force }: {
-    inputFile: string;
-    year: number;
-    day: number;
-    force?: boolean;
-  },
-) => {
+async function ensureInputFileExists({ inputFile, year, day, force }: {
+  inputFile: string;
+  year: number;
+  day: number;
+  force?: boolean;
+}) {
   const doesInputFileExist = existsSync(inputFile);
   if (doesInputFileExist) {
     if (force) {
@@ -71,36 +99,5 @@ const ensureInputFileExists = async (
   ensureFileSync(inputFile);
   const inputFileData = encoder.encode(input);
   Deno.writeFileSync(inputFile, inputFileData, { create: false });
-};
-
-/**
- * Initializes the day file and input to run if the day and input don't already exist already exist.
- * @param {InitConfig} config
- */
-const init = async (
-  day: number,
-  options: InitOptions,
-) => {
-  const aocConfig = getConfig();
-  const nameTemplate = options.nameTemplate || aocConfig.nameTemplate;
-  const templateFile = options.templateFile || aocConfig.templateFile;
-  const year = options.year || aocConfig.year;
-  const inputFile = options.inputFile || aocConfig.inputFile;
-  const force = options.force;
-  const dayFile = getDayFilePath(day, nameTemplate);
-
-  await ensureDayFileExists({
-    dayFile,
-    templateFile,
-    force,
-  });
-
-  await ensureInputFileExists({
-    year,
-    day,
-    inputFile,
-    force,
-  });
-};
-
+}
 export default init;

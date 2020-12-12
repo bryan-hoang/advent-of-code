@@ -7,7 +7,7 @@ export const Defaults = {
     (now.getMonth() === Month.DECEMBER
       ? now.getFullYear()
       : now.getFullYear() - 1),
-  templateFile: "https://raw.githubusercontent.com/bryan-hoang/advent-of-code/main/module/template/day.ts",
+  templateFile: "https://deno.land/x/advent_of_code/templates/day.ts",
   nameTemplate: "day_${num}.ts",
   inputFile: "input.txt",
 };

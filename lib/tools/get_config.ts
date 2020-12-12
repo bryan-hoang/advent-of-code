@@ -22,12 +22,16 @@ const getConfig = (configPath = "advent_of_code.json") => {
     Defaults.nameTemplate;
   const inputFile = aocConfig.inputFile || Defaults.inputFile;
 
-  return {
+  const config = {
     year,
     templateFile,
     nameTemplate,
     inputFile,
   };
+
+  debug("Final config:", config);
+
+  return config;
 };
 
 export default getConfig;
