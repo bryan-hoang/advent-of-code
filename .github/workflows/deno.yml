@@ -44,7 +44,7 @@ jobs:
         run: deno lint --unstable
 
       - name: Run Tests
-        run: deno test -A --unstable
         env:
           DEBUG: aoc
           AOC_SESSION: ${{ secrets.AOC_SESSION }}
+        run: deno test -A --unstable
