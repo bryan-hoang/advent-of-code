@@ -33,7 +33,9 @@ jobs:
           deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
 
       - name: Cache Dependencies
-        run: deno cache --unstable deps.ts
+        run: |
+          deno cache --unstable deps.ts
+          deno cache --unstable dev_deps.ts
 
       - name: Run formatting
         run: deno fmt --check
@@ -43,3 +45,5 @@ jobs:
 
       - name: Run Tests
         run: deno test -A --unstable
+        env:
+          AOC_SESSION: ${{ secrets.AOC_SESSION }}
