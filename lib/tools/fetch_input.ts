@@ -1,13 +1,15 @@
 import { config } from "../../deps.ts";
 import { debug } from "../../util.ts";
 
-const env = config();
+config({
+  export: true,
+});
 
 /**
  * Fetches the input from the advent of code website.
  */
 const fetchInput = async (
-  { year, day, session = env.AOC_SESSION }: {
+  { year, day, session = Deno.env.get('AOC_SESSION') }: {
     year: number;
     day: number;
     session?: string;
