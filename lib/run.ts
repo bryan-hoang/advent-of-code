@@ -78,7 +78,7 @@ async function getParts(dayFile: string) {
     throw new Error(`Cannot find module to import from ${dayFile}`);
   }
 
-  const dayFileImportPath = `file:/${path.resolve(dayFile)}`;
+  const dayFileImportPath = `file://${path.resolve(dayFile)}`;
   debug(`Dynamically importing ${dayFileImportPath}`);
   const dayModule: DayModule = await import(dayFileImportPath);
   debug("Imported day module:", dayModule);
