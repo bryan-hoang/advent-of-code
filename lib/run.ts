@@ -60,7 +60,7 @@ async function getInput(
     input = Deno.readTextFileSync(inputFile);
   } else {
     debug(
-      `Input file not found, reading input from http://adventofcode.com/${year}/day/${day}/input`,
+      `Input file not found, reading input from https://adventofcode.com/${year}/day/${day}/input`,
     );
 
     input = await fetchInput({ year, day });

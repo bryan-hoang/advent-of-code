@@ -86,16 +86,16 @@ the output from this handy so that the issue can be determined more quickly.
 
 ## Disclaimer
 
-I am not affiliated with [adventofcode.com](http://adventofcode.com) or any of
+I am not affiliated with [adventofcode.com](https://adventofcode.com) or any of
 their sponsors, employees, pets, or anything relating to them. I am an active
 participant, and I wanted to make a tool to make it easier to setup and run
 advent of code things. Please don't abuse
-[adventofcode.com](http://adventofcode.com). This tool could be used to make a
+[adventofcode.com](https://adventofcode.com). This tool could be used to make a
 lot of automated requests to their
 site<!-- , which is why this tool leverages caching -->. If you find that you're
-making too many requests to [adventofcode.com](http://adventofcode.com) because
+making too many requests to [adventofcode.com](https://adventofcode.com) because
 of this module, please let me know so I can resolve any issues. If this module
-is used to abuse [adventofcode.com](http://adventofcode.com), I will unpublish
+is used to abuse [adventofcode.com](https://adventofcode.com), I will unpublish
 it from deno.land and remove this code from github.
 
 ## TODO
@@ -105,6 +105,7 @@ Summary of progress tracking for the
 
 - [ ] Improve test suite
 - [ ] Flush out examples
+- [ ] Implement `aoc --init`: Initialize a default config file.
 - [ ] Implement `aoc submit`: Submit answers to Advent of Code puzzles.
 - [ ] Create programmatic API (similar to
       [advent-of-code-client](https://www.npmjs.com/package/advent-of-code-client))

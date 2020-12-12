@@ -14,7 +14,7 @@ const fetchInput = async (
   },
 ) => {
   debug("Session:", session);
-  const inputURL = new URL(`http://adventofcode.com/${year}/day/${day}/input`);
+  const inputURL = new URL(`https://adventofcode.com/${year}/day/${day}/input`);
   const headers = new Headers({
     cookie: `session=${session}`,
   });
