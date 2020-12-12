@@ -59,7 +59,7 @@ const main = () => {
       "-i, --input-file <filepath:string>",
       "The name of the input file to look for.",
     )
-    .action(async (options: RunOptions, ...args: [number, number, '-'?]) => {
+    .action(async (options: RunOptions, ...args: [number, number, "-"?]) => {
       debug("run args:", args);
       const [day, part, inputFlag] = args;
       debug("run options:", options);
