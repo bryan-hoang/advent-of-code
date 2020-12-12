@@ -1,6 +1,7 @@
 # advent_of_code
 
 ![Deno](https://github.com/bryan-hoang/advent-of-code/workflows/Deno/badge.svg)
+[![vr scripts](https://badges.velociraptor.run/flat.svg)](https://velociraptor.run)
 [![GitHub stars](https://img.shields.io/github/stars/bryan-hoang/advent-of-code)](https://github.com/bryan-hoang/advent-of-code/stargazers)
 [![GitHub license](https://img.shields.io/github/license/bryan-hoang/advent-of-code)](https://github.com/bryan-hoang/advent-of-code/blob/main/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/bryan-hoang/advent-of-code)](https://github.com/bryan-hoang/advent-of-code/network)
