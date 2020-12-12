@@ -24,9 +24,6 @@ jobs:
         os: [macOS-latest, windows-latest, ubuntu-latest]
 
     steps:
-      - name: Set git to use LF
-        run: git config --global core.autocrlf true
-
       - name: Setup repo
         uses: actions/checkout@v2
 
